@@ -1,0 +1,37 @@
+{
+  "name": "asta-os-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "electron:build": "tsc -b && vite build && electron-builder"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^11.11.9",
+    "three": "^0.168.0",
+    "@react-three/fiber": "^8.17.10",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.168.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "5.6.3",
+    "vite": "^5.4.8",
+    "tailwindcss": "^3.4.13",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20",
+    "electron": "^32.1.2",
+    "electron-builder": "^25.1.8",
+    "concurrently": "^9.0.1",
+    "wait-on": "^8.0.1"
+  }
+}
