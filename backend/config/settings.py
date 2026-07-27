@@ -26,8 +26,8 @@ class Settings(BaseSettings):
         )
 
     # Vector DB
-    CHROMA_HOST: str = "localhost"
-    CHROMA_PORT: int = 8001
+    CHROMA_HOST: str = "chroma-production-0b88.up.railway.app"
+    CHROMA_PORT: int = 8000
 
     # AI
     # AI Providers — config-driven, no code changes needed to reorder/add/remove
