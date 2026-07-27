@@ -91,7 +91,10 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24
 
     # CORS
-    ALLOWED_ORIGINS: list[str] = ["http://localhost:5173", "app://."]
+    ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Local development
+    "https://fabulous-truth-production-a69c.up.railway.app",  # Railway frontend
+]
 
     LOG_LEVEL: str = "INFO"
 
