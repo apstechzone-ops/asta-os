@@ -44,7 +44,7 @@ class Settings(BaseSettings):
     OLLAMA_COST_PER_1K_INPUT: float = 0.0  # local inference — genuinely free
     OLLAMA_COST_PER_1K_OUTPUT: float = 0.0
 
-    OPENROUTER_API_KEY: str = ""
+    OPENROUTER_API_KEY: str = "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"
     OPENROUTER_MODEL: str = "meta-llama/llama-3.1-8b-instruct:free"
     OPENROUTER_TIMEOUT: float = 60.0
     OPENROUTER_MAX_TOKENS: int = 1024
