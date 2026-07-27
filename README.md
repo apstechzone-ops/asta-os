@@ -1,4 +1,4 @@
-# Asta OS
+# Asta-OS 
 
 AI Operating System — modular backend (FastAPI), futuristic Electron/React frontend.
 
