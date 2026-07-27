@@ -33,8 +33,23 @@ async def chat(
     planner: PlannerService = Depends(get_planner_service),
     current_user: dict = Depends(get_current_user),
 ):
+    print("CHAT REQUEST:", req.message)
+    print("USER:", current_user)
+
     async def stream():
-        async for token in planner.handle_message(current_user["id"], req.session_id, req.message):
-            yield token
+        print("STREAM START")
+
+        try:
+            async for token in planner.handle_message(
+                current_user["id"],
+                req.session_id,
+                req.message
+            ):
+                print("TOKEN:", token)
+                yield token
+
+        except Exception as e:
+            print("STREAM ERROR:", str(e))
+            raise
 
     return StreamingResponse(stream(), media_type="application/x-ndjson")
