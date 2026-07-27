@@ -26,7 +26,7 @@ class Settings(BaseSettings):
         )
 
     # Vector DB
-    CHROMA_HOST: str = "chroma-production-0b88.up.railway.app"
+    CHROMA_HOST: str = "chroma.railway.internal"
     CHROMA_PORT: int = 8000
 
     # AI
