@@ -43,13 +43,21 @@ export const authApi = {
   },
 
   async login(email: string, password: string): Promise<Token> {
-    const res = await fetch(`${BASE_URL}/auth/login`, {
-      method: "POST",
-      headers: headers(),
-      body: JSON.stringify({ email, password }),
-    });
-    return handle<Token>(res);
-  },
+  const formData = new URLSearchParams();
+
+  formData.append("username", email);
+  formData.append("password", password);
+
+  const res = await fetch(`${BASE_URL}/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: formData.toString(),
+  });
+
+  return handle<Token>(res);
+},
 
   async me(): Promise<UserOut> {
     const res = await fetch(`${BASE_URL}/auth/me`, { headers: headers() });
