@@ -13,7 +13,7 @@ from backend.api.routes import (
     scheduler,
     system,
     tasks,
-    voice,
+    # voice,
 )
 
 api_router = APIRouter(prefix="/api/v1")
@@ -21,7 +21,7 @@ api_router.include_router(system.router)
 api_router.include_router(auth.router)
 api_router.include_router(memory.router)
 api_router.include_router(planner.router)
-api_router.include_router(voice.router)
+# api_router.include_router(voice.router)
 api_router.include_router(automation.router)
 api_router.include_router(rag.router)
 api_router.include_router(google.router)

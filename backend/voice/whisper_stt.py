@@ -5,7 +5,7 @@ from typing import AsyncIterator
 try:
     from faster_whisper import WhisperModel
 except ImportError:
-    WhisperModel = None
+    _model = None
 
 from backend.config import get_settings
 from backend.logging_ import get_logger
